@@ -6,8 +6,8 @@
 5 silly config load:file:/usr/etc/npmrc
 6 verbose title npm run build
 7 verbose argv "run" "build"
-8 verbose logfile logs-max:10 dir:/var/www/.npm/_logs/2026-03-10T18_51_21_067Z-
-9 verbose logfile /var/www/.npm/_logs/2026-03-10T18_51_21_067Z-debug-0.log
+8 verbose logfile logs-max:10 dir:/var/www/.npm/_logs/2026-03-17T18_42_45_810Z-
+9 verbose logfile /var/www/.npm/_logs/2026-03-17T18_42_45_810Z-debug-0.log
 10 silly logfile done cleaning log files
 11 verbose cwd /var/www
 12 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
