@@ -13,7 +13,7 @@ class CitySeeder extends Seeder
     public function run(): void
 {
     // Folosim DB direct, nu mai avem nevoie de Modelul City
-    \Illuminate\Support\Facades\DB::table('cities')->truncate();
+   // \Illuminate\Support\Facades\DB::table('cities')->truncate();
 
     $filePath = database_path('data/orase.csv');
     

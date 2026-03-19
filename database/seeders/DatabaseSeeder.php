@@ -14,17 +14,20 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        $this->call([
+{
+    // 1. Întâi chemăm CitySeeder ca să umplem tabelul cities
+    $this->call([
         CitySeeder::class,
-        // Aici voi adăuga StreetSeeder sau UserSeeder mai târziu
     ]);
-    }
+
+    // 2. ABIA ACUM creăm utilizatorul, pentru că ID-ul 1 există deja
+    User::factory()->create([
+        'name' => 'Cristina Cristea',
+        'email' => 'cristina@gmail.com',
+        'password' => Hash::make('parola_ta_aici'),
+        'role' => 'admin',
+        'city_id' => 5,
+        'address' => 'Strada Libertății, Nr. 20, Bl. A, Ap. 5',
+    ]);
+}
 }
