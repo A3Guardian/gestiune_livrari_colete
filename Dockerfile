@@ -27,9 +27,12 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint-app.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint-app.sh
+
 WORKDIR /var/www
 
-# Important: Ne asigurăm că utilizatorul are permisiuni pe folderul de lucru
 RUN chown -R www-data:www-data /var/www
 
-USER www-data
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint-app.sh"]
+CMD ["php-fpm", "-F"]
